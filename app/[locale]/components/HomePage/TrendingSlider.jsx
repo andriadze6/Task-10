@@ -5,16 +5,12 @@ import { useState } from "react";
 import useSlider from '@/app/hooks/changeSlider'
 
 
-import ManTrending from "../../assets/img/homePageImg/Trending/Man/ManTrending.png"
-import ManTrending2 from "../../assets/img/homePageImg/Trending/Man/ManTrending2.png"
-import ManTrending3 from "../../assets/img/homePageImg/Trending/Man/ManTrending3.png"
-import ManTrending4 from "../../assets/img/homePageImg/Trending/Man/ManTrending4.png"
-import ManTrending5 from "../../assets/img/homePageImg/Trending/Man/ManTrending5.png"
-import ManTrending6 from "../../assets/img/homePageImg/Trending/Man/ManTrending6.png"
-import ManTrending7 from "../../assets/img/homePageImg/Trending/Man/ManTrending7.png"
-import ManTrending8 from "../../assets/img/homePageImg/Trending/Man/ManTrending8.png"
 
-export default function Slider(){
+
+
+
+export default function Slider({trending}){
+    debugger
     let { sliderState, changeSlider } = useSlider(3);
     return(
         <div className="TrendingWrapper">
@@ -33,30 +29,16 @@ export default function Slider(){
             <div className="TSlider-Wrapper">
                 <div className="TSlider-Container"
                     style={{transform:`translate3d(-${sliderState.transferX}%, 0, 0)`}}>
-                    <div style={{flex: `0 0 calc(100% / ${3})`}} className="Item">
-                        <div style={{position:"relative"}}>
-                            <Image className="T-Img" alt="" height={500} width={500} src={ManTrending}/>
-                            <Image className="T-Img2" alt="" height={500} width={500} src={ManTrending2}/>
-                        </div>
-                    </div>
-                    <div style={{flex: `0 0 calc(100% / ${3})`}} className="Item">
-                        <div style={{position:"relative"}}>
-                            <Image className="T-Img" alt="" height={500} width={500} src={ManTrending3}/>
-                            <Image className="T-Img2" alt="" height={500} width={500} src={ManTrending4}/>
-                        </div>
-                    </div>
-                    <div style={{flex: `0 0 calc(100% / ${3})`}} className="Item">
-                        <div style={{position:"relative"}}>
-                            <Image className="T-Img" alt="" height={500} width={500} src={ManTrending5}/>
-                            <Image className="T-Img2" alt="" height={500} width={500} src={ManTrending6}/>
-                        </div>
-                    </div>
-                    <div style={{flex: `0 0 calc(100% / ${3})`}} className="Item">
-                        <div style={{position:"relative"}}>
-                            <Image className="T-Img" alt="" height={500} width={500} src={ManTrending7}/>
-                            <Image className="T-Img2" alt="" height={500} width={500} src={ManTrending8}/>
-                        </div>
-                    </div>
+                    {trending.map((item)=>{
+                        return(
+                            <div key={item.id} style={{flex: `0 0 calc(100% / ${3})`}} className="Item">
+                                <div style={{position:"relative"}}>
+                                    <Image className="T-Img" alt="" height={500} width={500} src={item.img[0]}/>
+                                    <Image className="T-Img2" alt="" height={500} width={500} src={item.img[1]}/>
+                                </div>
+                            </div>
+                        )})
+                    }
                 </div>
             </div>
             <div style={{display:"flex",gap:"60px", justifyContent:"center"}}>
