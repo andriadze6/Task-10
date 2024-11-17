@@ -1,12 +1,61 @@
-.NewDetailedPage-Wrapper{
-    background-color: var(--TWrapperBackGround);
+.Slider-Wrapper{
 }
 .NewDetailedPage-Container{
+    padding: 50px;
     margin: 0 auto;
     width: 86%;
+    overflow: hidden;
+    display: flex;
+    gap: 50px;
 }
 .Slider-Container{
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    gap:20px;
+    display: flex;
+    gap:10px;
+    overflow: hidden;
+    width: 50%;
+}
+.Small-ImgDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 15px;
+}
+.Small-ImgDiv img{
+    border-radius: 15px;
+    cursor: pointer;
+    object-fit: fill;
+    height: 100%;
+}
+.Big-ImgDiv img{
+    border-radius: 15px;
+    width: 100%;
+}
+.Big-ImgDiv{
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.Big-Img-Container{
+    display: flex;
+    transition: all 0.5s ease;
+}
+
+.borderActive{
+    border: 1px solid var(--RedColor);
+    border-radius: 15px;
+    transition: all 1s ease;
+}
+.changeSliderButton{
+    display:flex;
+    justify-content:space-between;
+    position:absolute;
+    top:50%;
+    width:100%;
+    padding:10px;
+    opacity: 0;
+    transition:all 0.5s ease;
+}
+.Big-ImgDiv:hover .changeSliderButton{
+    opacity: 1;
 }

@@ -106,7 +106,7 @@ async function HomePage(){
                     <div style={{display:"grid", gridTemplateColumns:"1fr 2fr", gap:"20px"}}>
                         <div className="mainBillboard-ImgDiv mainBillboard-row">
                             <div>
-                                <Image  className="mainBillboard-Img" alt="" src={BillboardImg4}/>
+                                <Image className="mainBillboard-Img" alt="" src={BillboardImg4}/>
                             </div>
                             <div className="text-Div">
                                 <h4 style={{fontSize:"30px"}}>Spring bread</h4>
