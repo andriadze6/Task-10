@@ -11,7 +11,7 @@ import twitterIcon from '../../assets/img/twitterIcon.png';
 import logo from '../../assets/img/Logo.png';
 import cartIcon from '../../assets/img/icon-cart.png';
 import Image from "next/image";
-import Link from 'next/link';
+import {Link} from '@/i18n/routing';
 import Search from '../SearchInput';
 import UserDropDownList from '../UserdropDownManue';
 import useTheme from '@/app/hooks/changeTheme';
@@ -57,10 +57,10 @@ function Header(){
                         </div>
                         <nav>
                             <div className='navName-div'>
-                                <Link href={`/${currentLanguage}`} className='navName'>{t('Home')}</Link>
+                                <Link href={`/`} className='navName'>{t('Home')}</Link>
                             </div>
                             <div className='navName-div'>
-                                <Link href={`/${currentLanguage}/ShopLayout/woman/`} className='navName'>{t('Woman')} <i className="fa fa-angle-down"></i></Link>
+                                <Link href={`/ShopLayout/woman/`} className='navName'>{t('Woman')} <i className="fa fa-angle-down"></i></Link>
                             </div>
                             <div className='navName-div'>
                                 <Link href='' className='navName'>{t('Man')}<i className="fa fa-angle-down"></i></Link>

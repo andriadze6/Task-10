@@ -299,6 +299,9 @@
     overflow: hidden;
     padding: 10px;
 }
+.SliderItem:hover .S-Img2{
+    opacity: 1;
+}
 .popUpContent{
     position: absolute;
     opacity: 0;

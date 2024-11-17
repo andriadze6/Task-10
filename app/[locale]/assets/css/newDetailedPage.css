@@ -1,0 +1,12 @@
+.NewDetailedPage-Wrapper{
+    background-color: var(--TWrapperBackGround);
+}
+.NewDetailedPage-Container{
+    margin: 0 auto;
+    width: 86%;
+}
+.Slider-Container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap:20px;
+}
