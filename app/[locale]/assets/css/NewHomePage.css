@@ -271,6 +271,7 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
+    transition: all .5s ease-out;
 }
 .S-Img{
     border-radius: 15px;
