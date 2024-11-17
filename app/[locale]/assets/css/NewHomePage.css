@@ -1,0 +1,341 @@
+
+:root{
+    --billboardGap: 20px;
+    --billboardMaxHeight:700px;
+    --header1Height:60px;
+    --header2Height:110;
+    --BillboardHeight:100vw;
+    --TrendingDivPadding: 90px 0px;
+    --RedColor:#c1121f;
+}
+.mainBillboard-Img{
+    width: 100%;
+    object-fit: cover;
+    transition: scale 0.5s linear;
+    cursor: pointer;
+}
+.mainBillboard{
+    display: grid;
+    overflow: hidden;
+    grid-template-columns:1fr 2fr ;
+    gap: 20px;
+    margin:0 auto;
+    width: 95%;
+    max-height: 700px;
+    box-shadow: var(--BoxTrendingShadow);
+}
+.mainBillboard-1Column{
+    max-height: var(--billboardMaxHeight);
+}
+.mainBillboard-2Column{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: var(--billboardGap);
+}
+.mainBillboard-2Column img{
+    max-height:calc((var(--billboardMaxHeight) / 2) - (var(--billboardGap) / 2));
+}
+
+.mainBillboard-row{
+    height: calc((var(--billboardMaxHeight) / 2) - (var(--billboardGap) / 2));
+}
+.mainBillboard-ImgDiv{
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: showImgDiv 0.5ms ease forwards 1.2s;
+}
+
+@keyframes showImgDiv {
+    from {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+.mainBillboard-ImgDiv:hover .mainBillboard-Img{
+    scale: 1.08;
+}
+.text-Div{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+    position: absolute;
+    color: white;
+    z-index: 100;
+    top: 30%;
+    padding: 30px;
+    opacity: 0;
+    animation: revealFromBottom 1s ease forwards 1.2s;
+}
+.text-Div h3{
+    font-size: 58px;
+    font-family: Jost;
+}
+
+@keyframes revealFromBottom {
+    from {
+        transform: translateY(60px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.roundButton{
+    cursor: pointer;
+    padding: 20px;
+    width: 50%;
+    border-radius: 20px;
+    background-color: white;
+    border: none;
+    color: #247f9e;
+    text-transform: uppercase;
+    transition: all 0.25s linear;
+}
+.roundButton:hover{
+    background-color: var(--RedColor);
+    color: white;
+}
+.lineButton{
+    cursor: pointer;
+    color: var(--foreground);
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    text-transform: uppercase;
+    transition: all 0.25s linear;
+}
+.lineButton:hover{
+    color: var(--RedColor);
+}
+
+
+.TrendingWrapper{
+    background-color: var(--TWrapperBackGround);
+    padding: var(--TrendingDivPadding);
+    margin-top: 50px;
+}
+.TrendingContainer{
+    margin: 0 auto;
+    max-width: 70vw;
+}
+.TrendingDiv-header{
+    display: flex;
+    justify-content: space-between;
+}
+.TrendingDiv-header h3{
+    font-size: 30px;
+}
+.TrendingDiv-header button{
+    color: var(--foreground);
+    font-size: 15px;
+    font-weight: bold;
+}
+.TrendingDiv-header h3, button {
+    text-transform: capitalize !important;
+}
+.slider-Button{
+    border-color: transparent;
+    background-color:white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.25s linear;
+    display: flex;
+    align-items: center ;
+    box-shadow: 0 4px 8px rgba(155, 177, 207, 0.685);
+}
+.slider-Button:hover{
+    background-color: var(--RedColor);
+    color: #f2f1f0;
+}
+.slider-Button svg{
+    width: 30px;
+}
+.TSlider-Wrapper{
+    position: relative;
+    overflow: hidden;
+    padding:20px 0px;
+}
+.TSlider-Container{
+    display: flex;
+    transition: all .5s ease-out;
+}
+.Item{
+    padding: 20px;
+}
+
+.T-Img, .T-Img2{
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: contain;
+}
+.T-Img2{
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ensure it covers the parent */
+    border-radius: 10px; /* Match border radius */
+    object-fit: cover;
+    transition: opacity 0.5s linear; /* Smooth transition */
+}
+.Item:hover .T-Img2{
+    opacity: 1;
+}
+.Active{
+    color: var(--RedColor);
+}
+
+
+
+
+.BannerContainer{
+    margin: 0 auto;
+    max-width: 75%;
+    display: grid;
+    gap: 30px;
+    padding: 50px;
+    grid-template-columns: 1fr 2fr;
+}
+.mainBanner{
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+}
+.mainBanner-ImgDiv{
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+.mainBanner img{
+    border-radius: 15px;
+    height: 700px;
+    transition: scale 0.5s linear;
+}
+.mainBanner:hover img{
+    scale: 1.08;
+}
+.exploreButton{
+    cursor: pointer;
+    padding: 20px;
+    width: 30%;
+    border-radius: 20px;
+    background-color: white;
+    border: none;
+    color: #247f9e;
+    text-transform: uppercase;
+    transition: all 0.25s linear;
+    position: absolute;
+    z-index: 50;
+    left: 25%;
+    bottom: 7%;
+}
+.exploreButton:hover{
+    background-color: var(--RedColor);
+    color: white;
+}
+
+.strike-center {
+    position: relative;
+    white-space: nowrap; /* would center line-through in the middle of the wrapped lines */
+}
+
+.strike-center:after {
+    border-top: 1px solid #000;
+    position: absolute;
+    content: "";
+    right: 0;
+    top:50%;
+    left: 0;
+}
+
+/* დავიმახსოვრო როგორ მოვარგო სურათები  */
+.sliderWrapper{
+    align-items: center;
+    overflow: hidden;
+}
+.sliderContainer{
+    width: 100%;
+    height: 70%; /* Or set a specific pixel height, e.g., height: 500px; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+.S-Img{
+    border-radius: 15px;
+    object-fit: cover; /* Ensures the image scales to fit the container */
+    height: 100%; /* Match the sliderContainer height */
+    width: 100%;
+}
+.S-Img2{
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ensure it covers the parent */
+    border-radius: 10px; /* Match border radius */
+    object-fit: cover;
+    transition: opacity 0.5s linear; /* Smooth transition */
+}
+.SliderItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Match sliderContainer height */
+    overflow: hidden;
+    padding: 10px;
+}
+.popUpContent{
+    position: absolute;
+    opacity: 0;
+    display: flex;
+    gap:20px;
+    left: 30%;
+    bottom: 20px;
+    z-index: 5;
+    transition: all 1s linear ;
+}
+.SliderItem:hover .popUpContent{
+    opacity: 1;
+    transform: translateY(-40px);
+}
+.cardButton{
+    width: 40px;
+    height: 40px;
+    border-color: transparent;
+    background-color:white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.25s linear;
+    display: flex;
+    align-items: center ;
+    box-shadow: 0 4px 8px rgba(155, 177, 207, 0.685);
+}
+.cardButton:hover{
+    background-color: var(--RedColor);
+    color: white;
+}
+
+/* @keyframes showButton{
+    from{
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 0;
+    }
+} */
