@@ -15,25 +15,25 @@ import NewCard from "../NewCard";
 let NewArrival =[
     {
         id:1,
-        img:[NewArrival11, NewArrival12],
+        images:[NewArrival11, NewArrival12],
         title:"New arrival1",
         price:"$200",
     },
     {
         id:2,
-        img:[NewArrival21, NewArrival22],
+        images:[NewArrival21, NewArrival22],
         title:"New arrival2",
         price:"$200",
     },
     {
         id:3,
-        img:[NewArrival31, NewArrival32],
+        images:[NewArrival31, NewArrival32],
         title:"New arrival3",
         price:"$200",
     },
     {
         id:4,
-        img:[NewArrival41, NewArrival42],
+        images:[NewArrival41, NewArrival42],
         title:"New arrival4",
         price:"$200",
     },

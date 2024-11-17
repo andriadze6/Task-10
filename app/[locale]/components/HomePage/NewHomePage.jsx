@@ -25,25 +25,25 @@ import ManTrending8 from "../../assets/img/homePageImg/Trending/Man/ManTrending8
 let trending =[
     {
         id:5,
-        img:[ManTrending, ManTrending2],
+        images:[ManTrending, ManTrending2],
         title:"New arrival1",
         price:"$200",
     },
     {
         id:6,
-        img:[ManTrending3, ManTrending4],
+        images:[ManTrending3, ManTrending4],
         title:"New arrival2",
         price:"$200",
     },
     {
         id:7,
-        img:[ManTrending5, ManTrending6],
+        images:[ManTrending5, ManTrending6],
         title:"New arrival3",
         price:"$200",
     },
     {
         id:8,
-        img:[ManTrending7, ManTrending8],
+        images:[ManTrending7, ManTrending8],
         title:"New arrival4",
         price:"$200",
     },

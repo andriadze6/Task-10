@@ -33,8 +33,8 @@ export default function Slider({trending}){
                         return(
                             <div key={item.id} style={{flex: `0 0 calc(100% / ${3})`}} className="Item">
                                 <div style={{position:"relative"}}>
-                                    <Image className="T-Img" alt="" height={500} width={500} src={item.img[0]}/>
-                                    <Image className="T-Img2" alt="" height={500} width={500} src={item.img[1]}/>
+                                    <Image className="T-Img" alt="" height={500} width={500} src={item.images[0]}/>
+                                    <Image className="T-Img2" alt="" height={500} width={500} src={item.images[1]}/>
                                 </div>
                             </div>
                         )})

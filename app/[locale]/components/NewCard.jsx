@@ -1,12 +1,13 @@
 "use client"
 import Image from "next/image";
+import "../assets/css/NewHomePage.css"
 export default function Card({props}){
     return(
-        <>
+        <div style={{display:"flex", flexDirection:"column"}}>
             <div className='cardImgDiv' style={{position:"relative"}}>
                 <div>
-                    <Image className="S-Img" alt="" height={500} width={500} src={props.img[0]}/>
-                    <Image className="S-Img2" alt="" height={500} width={500} src={props.img[1]}/>
+                    <Image className="S-Img" alt="" height={500} width={500} src={props.images[0]}/>
+                    <Image className="S-Img2" alt="" height={500} width={500} src={props.images[1]}/>
                 </div>
                 <div className="popUpContent">
                     <button className="cardButton">
@@ -32,6 +33,6 @@ export default function Card({props}){
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

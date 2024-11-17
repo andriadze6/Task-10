@@ -1,6 +1,5 @@
 'use client'
-import Card from './Card';
-import '../assets/css/shopLayout.css';
+import NewCard from './NewCard';
 import { useEffect, useState } from "react";
 import FilterProduct from '../../Functions/GetSortProducts';
 
@@ -43,7 +42,7 @@ function ShopLayout({Result}){
                     productList.length > 0 &&(
                         productList.map((element)=>{
                             return(
-                                <Card key={element.id} Product={element}></Card>
+                                <NewCard key={element.id} props={element}></NewCard>
                             )
                         })
                     )
