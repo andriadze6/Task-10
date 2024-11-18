@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const useSlider = (sliderToShow, sliderAmount = 4) => {
+const useSlider = (sliderToShow :number, sliderAmount = 4) => {
     const [sliderState, setSliderState] = useState({
         clickAmount: 0,
         transferX: 0,
@@ -8,7 +8,7 @@ const useSlider = (sliderToShow, sliderAmount = 4) => {
 
     const clickAmount = sliderAmount - sliderToShow;
 
-    const changeSlider = (con) => {
+    const changeSlider = (con :number) => {
         debugger
         const width = 100 / sliderToShow;
         if (con === 1) {
