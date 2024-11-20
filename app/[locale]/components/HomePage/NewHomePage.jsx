@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useContext } from "react";
 import "../../assets/css/NewHomePage.css"
 import BillboardImg1 from "../../assets/img/homePageImg/NewHomePage/Header-Img1.png"
 import BillboardImg2 from "../../assets/img/homePageImg/NewHomePage/Header-Img2.png"
@@ -62,6 +63,7 @@ let trending =[
 
 async function HomePage(){
     // const data = await GetHomePageData();
+    let homePageData = useContext(homePageDataContext);
     console.log(MainBanner)
     return(
         <>
