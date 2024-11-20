@@ -22,15 +22,13 @@ async function getData() {
     return null;
   }
 }
-
 export default async function HomePage() {
   const homePageData = await getData();
+  debugger
   return (
     <>
       <NewHeader></NewHeader>
-      <HomePageDataContext.Provider value={{homePageData}}>
-        <NewHomePage></NewHomePage>
-      </HomePageDataContext.Provider>
+      <NewHomePage manTrending={homePageData.man_tranding_product} womanTrending={homePageData.woman_tranding_product} kidTrending={homePageData.kid_tranding_product} newArrival={homePageData.new_arrival_product} ></NewHomePage>
       {/* <Header></Header>
       <HomePageComponents></HomePageComponents> */}
     </>

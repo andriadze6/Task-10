@@ -187,6 +187,7 @@ export type Database = {
     Views: {
       kid_tranding_product_view: {
         Row: {
+          img: Json | null
           product_ID: number | null
         }
         Relationships: [
@@ -235,6 +236,7 @@ export type Database = {
       }
       woman_tranding_product_view: {
         Row: {
+          img: Json | null
           product_ID: number | null
         }
         Relationships: [

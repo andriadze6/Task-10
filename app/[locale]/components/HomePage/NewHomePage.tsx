@@ -1,6 +1,12 @@
+"use client"
+
 import Image from "next/image";
 import { useContext } from "react";
 import "../../assets/css/NewHomePage.css"
+import { Database } from "../../lib/dataTypes ";
+
+
+
 import BillboardImg1 from "../../assets/img/homePageImg/NewHomePage/Header-Img1.png"
 import BillboardImg2 from "../../assets/img/homePageImg/NewHomePage/Header-Img2.png"
 import BillboardImg3 from "../../assets/img/homePageImg/NewHomePage/Header-Img3.png"
@@ -12,59 +18,19 @@ import WomanTrending from "../../assets/img/homePageImg/Trending/WomanTrend.png"
 import SwimWear from '../../assets/img/homePageImg/NewHomePage/SwimWear.png'
 import Link from "next/link";
 import MainBanner from '../../assets/img/homePageImg/NewArrival/MainBanner.png'
-import Slider from "../HomePage/Slider";
+import Slider from "./Slider";
 
-import ManTrending from "../../assets/img/homePageImg/Trending/Man/ManTrending.png"
-import ManTrending2 from "../../assets/img/homePageImg/Trending/Man/ManTrending2.png"
-import ManTrending3 from "../../assets/img/homePageImg/Trending/Man/ManTrending3.png"
-import ManTrending4 from "../../assets/img/homePageImg/Trending/Man/ManTrending4.png"
-import ManTrending5 from "../../assets/img/homePageImg/Trending/Man/ManTrending5.png"
-import ManTrending6 from "../../assets/img/homePageImg/Trending/Man/ManTrending6.png"
-import ManTrending7 from "../../assets/img/homePageImg/Trending/Man/ManTrending7.png"
-import ManTrending8 from "../../assets/img/homePageImg/Trending/Man/ManTrending8.png"
+import { type } from "os";
 
-let trending =[
-    {
-        id:5,
-        images:[ManTrending, ManTrending2],
-        title:"New arrival1",
-        price:"$200",
-    },
-    {
-        id:6,
-        images:[ManTrending3, ManTrending4],
-        title:"New arrival2",
-        price:"$200",
-    },
-    {
-        id:7,
-        images:[ManTrending5, ManTrending6],
-        title:"New arrival3",
-        price:"$200",
-    },
-    {
-        id:8,
-        images:[ManTrending7, ManTrending8],
-        title:"New arrival4",
-        price:"$200",
-    },
-]
+ type homepageType = {
+    manTrending:Database["public"]["Views"]["man_tranding_product_view"]["Relationships"][],
+    womanTrending:Database["public"]["Views"]["woman_tranding_product_view"]["Relationships"][],
+    kidTrending:Database["public"]["Views"]["kid_tranding_product_view"]["Relationships"][],
+    newArrival:Database["public"]["Views"]["newarrival_product_view"]["Relationships"][],
+ }
 
-// async function GetHomePageData(params) {
-//     const [woman, man] = await Promise.all([
-//         fetch('https://dummyjson.com/products/category/womens-dresses'),
-//         fetch('https://dummyjson.com/products/category/mens-shirts')
-//     ])
-//     let [manT, womanT] = await Promise.all([
-//         man.json(), woman.json()
-//     ])
-//     return [manT.products,womanT.products]
-// }
-
-async function HomePage(){
-    // const data = await GetHomePageData();
-    let homePageData = useContext(homePageDataContext);
-    console.log(MainBanner)
+function HomePage({ manTrending,womanTrending,kidTrending,newArrival}:homepageType){
+    debugger
     return(
         <>
             <div className="mainBillboard">
@@ -127,7 +93,7 @@ async function HomePage(){
                     </div>
                 </div>
             </div>
-            <TrendingSlider trending={trending}></TrendingSlider>
+            <TrendingSlider manTrending={manTrending} womanTrending={womanTrending} kidTrending={kidTrending} newArrival={newArrival}></TrendingSlider>
             <div className="BannerWrapper">
                 <div className="BannerContainer">
                     <Link className="mainBanner" href='/'>

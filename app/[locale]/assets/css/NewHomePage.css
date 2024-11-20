@@ -122,6 +122,8 @@
     background-color: var(--TWrapperBackGround);
     padding: var(--TrendingDivPadding);
     margin-top: 50px;
+    transition: all .5s ease-out;
+
 }
 .TrendingContainer{
     margin: 0 auto;
@@ -163,7 +165,20 @@
     position: relative;
     overflow: hidden;
     padding:20px 0px;
+    animation: changeCategory 1s linear;
 }
+
+@keyframes changeCategory {
+    from {
+        transform: translateY(60px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 .TSlider-Container{
     display: flex;
     transition: all .5s ease-out;
@@ -177,6 +192,7 @@
     width: 100%;
     border-radius: 10px;
     object-fit: contain;
+    transition: opacity 1s linear; /* Smooth transition */
 }
 .T-Img2{
     position: absolute;
@@ -187,17 +203,17 @@
     height: 100%; /* Ensure it covers the parent */
     border-radius: 10px; /* Match border radius */
     object-fit: contain;
-    transition: opacity 0.5s linear; /* Smooth transition */
 }
 .Item:hover .T-Img2{
     opacity: 1;
 }
+
+.Item:hover .T-Img {
+    opacity: 0; /* Hide T-Img */
+}
 .Active{
     color: var(--RedColor);
 }
-
-
-
 
 .BannerContainer{
     margin: 0 auto;
@@ -281,7 +297,7 @@
 }
 .S-Img2{
     position: absolute;
-    opacity: 0;
+    opacity: 1;
     top: 0;
     left: 0;
     width: 100%;
