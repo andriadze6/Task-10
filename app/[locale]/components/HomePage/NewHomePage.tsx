@@ -101,7 +101,7 @@ function HomePage({ manTrending,womanTrending,kidTrending,newArrival}:homepageTy
                         </div>
                         <button className="exploreButton">Explore</button>
                     </Link>
-                <Slider></Slider>
+                <Slider newArrival={newArrival}></Slider>
                 </div>
             </div>
         </>
