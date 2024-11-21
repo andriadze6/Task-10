@@ -37,7 +37,7 @@ interface NewArrivalItem {
 function HomePage({ manTrending,womanTrending,kidTrending,newArrival}:homepageType){
     return(
         <>
-            <div className="mainBillboard">
+            {/* <div className="mainBillboard">
                 <div className="mainBillboard-1Column">
                     <div className="mainBillboard-ImgDiv">
                         <div>
@@ -96,7 +96,7 @@ function HomePage({ manTrending,womanTrending,kidTrending,newArrival}:homepageTy
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <TrendingSlider manTrending={manTrending} womanTrending={womanTrending} kidTrending={kidTrending}></TrendingSlider>
             <div className="BannerWrapper">
                 <div className="BannerContainer">
