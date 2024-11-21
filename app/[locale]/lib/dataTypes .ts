@@ -255,9 +255,53 @@ export type Database = {
         Args: Record<PropertyKey, never>
         Returns: Json
       }
+      getallproduct: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          category: string
+          color: string[]
+          description: string
+          discountPercentage: number | null
+          gender: string
+          id: number
+          img: Json
+          minimumOrderQuantity: number
+          price: number
+          priceDiscoun: number | null
+          rating: number | null
+          size: Json | null
+          sku: string | null
+          stock: Json
+          tags: string[]
+          title: string
+        }[]
+      }
+      getproductbygender: {
+        Args: {
+          _gender: string
+        }
+        Returns: {
+          category: string
+          color: string[]
+          description: string
+          discountPercentage: number | null
+          gender: string
+          id: number
+          img: Json
+          minimumOrderQuantity: number
+          price: number
+          priceDiscoun: number | null
+          rating: number | null
+          size: Json | null
+          sku: string | null
+          stock: Json
+          tags: string[]
+          title: string
+        }[]
+      }
       getproductbyid: {
         Args: {
-          id: number
+          input_id: number
         }
         Returns: {
           category: string
