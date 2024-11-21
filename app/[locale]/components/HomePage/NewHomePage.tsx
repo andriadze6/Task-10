@@ -22,7 +22,7 @@ import Slider from "./Slider";
 
 import { type } from "os";
 interface NewArrivalItem {
-    id: number;
+    product_ID: number;
     title: string;
     price: number;
     color: string[];

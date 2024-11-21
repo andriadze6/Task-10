@@ -56,7 +56,7 @@ export default async function WomanCategory(): Promise<JSX.Element> {
                           />
                           <Image
                             key={`image-2-${item.id}-${index}`}
-                            className="T-Img2"
+                            style={{display:"none"}}
                             alt=""
                             height={500}
                             width={500}

@@ -31,7 +31,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "app/[locale]/layout.jsx", "app/providers/ThemeProvider.js", "app/api/auth/[auth0]/route.js", "app/[locale]/components/Header/languageSwitcher.jsx"  ],
+, "app/[locale]/layout.jsx", "app/providers/ThemeProvider.js", "app/api/auth/[auth0]/route.ts", "app/[locale]/components/Header/languageSwitcher.tsx"  ],
   "exclude": [
     "node_modules"
   ]

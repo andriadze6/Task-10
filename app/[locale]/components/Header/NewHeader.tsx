@@ -2,7 +2,7 @@
 import "../../assets/css/NewHeader.css";
 import { useRouter } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
-import { LanguagePicker } from "../Header/languageSwitcher";
+import { LanguagePicker } from "./languageSwitcher";
 
 import { ThemeProvider } from "../../providers/ThemeProvider";
 import instagramIcon from "../../assets/img/InstagramIcon.png";
