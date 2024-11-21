@@ -1,6 +1,8 @@
 "use client"
 import Image from "next/image";
 import "../assets/css/NewHomePage.css"
+
+
 export default function Card({props}){
     return(
         <div style={{display:"flex", flexDirection:"column"}}>
