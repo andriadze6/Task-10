@@ -8,14 +8,14 @@ type homepageType = {
   manTrending: Database["public"]["Views"]["man_tranding_product_view"]["Row"][];
   womanTrending: Database["public"]["Views"]["woman_tranding_product_view"]["Row"][];
   kidTrending: Database["public"]["Views"]["kid_tranding_product_view"]["Row"][];
-  newArrival: Database["public"]["Views"]["newarrival_product_view"]["Row"][];
+
 };
 
 export default function Slider({
   manTrending,
   womanTrending,
   kidTrending,
-  newArrival,
+  
 }: homepageType) {
   debugger;
   const [category, setCategory] = useState({
