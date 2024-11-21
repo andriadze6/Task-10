@@ -211,6 +211,10 @@
 .Item:hover .T-Img {
     opacity: 0; /* Hide T-Img */
 }
+.Item:hover .popUpContent {
+    opacity: 1;
+    transform: translateY(-40px);
+}
 .Active{
     color: var(--RedColor);
 }
@@ -332,6 +336,7 @@
     opacity: 1;
     transform: translateY(-40px);
 }
+
 .cardButton{
     width: 40px;
     height: 40px;

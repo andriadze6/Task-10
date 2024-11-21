@@ -2,7 +2,7 @@
 import "../../assets/css/NewHeader.css";
 import { useRouter } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
-import { LanguagePicker } from "../Header/languageSwitcher";
+import { LanguagePicker } from "./languageSwitcher";
 
 import { ThemeProvider } from "../../providers/ThemeProvider";
 import instagramIcon from "../../assets/img/InstagramIcon.png";
@@ -82,7 +82,7 @@ function Header() {
                 </Link>
               </div>
               <div className="navName-div">
-                <Link href={`/ShopLayout/woman/`} className="navName">
+                <Link href={`/womanCategory`} className="navName">
                   {t("Woman")} <i className="fa fa-angle-down"></i>
                 </Link>
               </div>
@@ -93,7 +93,7 @@ function Header() {
                 </Link>
               </div>
               <div className="navName-div">
-                <Link href="" className="navName">
+                <Link href="/KidsTrending" className="navName">
                   {t("Kids")}
                   <i className="fa fa-angle-down"></i>
                 </Link>

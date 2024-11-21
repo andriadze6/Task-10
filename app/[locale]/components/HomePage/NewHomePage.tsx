@@ -21,18 +21,23 @@ import MainBanner from '../../assets/img/homePageImg/NewArrival/MainBanner.png'
 import Slider from "./Slider";
 
 import { type } from "os";
-
+//obieqtis tipi
+interface NewArrivalItem {
+    product_ID: number;
+    title: string;
+    price: number;
+    color: string[];
+    img: { [key: string]: string[] };
+  }
  type homepageType = {
     manTrending:Database["public"]["Views"]["man_tranding_product_view"]["Row"][],
     womanTrending:Database["public"]["Views"]["woman_tranding_product_view"]["Row"][],
     kidTrending:Database["public"]["Views"]["kid_tranding_product_view"]["Row"][],
-    newArrival:Database["public"]["Views"]["newarrival_product_view"]["Row"][],
- }
+    newArrival: NewArrivalItem[]; }
 function HomePage({ manTrending,womanTrending,kidTrending,newArrival}:homepageType){
-    debugger
     return(
         <>
-            <div className="mainBillboard">
+            {/* <div className="mainBillboard">
                 <div className="mainBillboard-1Column">
                     <div className="mainBillboard-ImgDiv">
                         <div>
@@ -91,8 +96,8 @@ function HomePage({ manTrending,womanTrending,kidTrending,newArrival}:homepageTy
                         </div>
                     </div>
                 </div>
-            </div>
-            <TrendingSlider manTrending={manTrending} womanTrending={womanTrending} kidTrending={kidTrending} newArrival={newArrival}></TrendingSlider>
+            </div> */}
+            <TrendingSlider manTrending={manTrending} womanTrending={womanTrending} kidTrending={kidTrending}></TrendingSlider>
             <div className="BannerWrapper">
                 <div className="BannerContainer">
                     <Link className="mainBanner" href='/'>
@@ -101,7 +106,7 @@ function HomePage({ manTrending,womanTrending,kidTrending,newArrival}:homepageTy
                         </div>
                         <button className="exploreButton">Explore</button>
                     </Link>
-                <Slider></Slider>
+                <Slider newArrival={newArrival}></Slider>
                 </div>
             </div>
         </>

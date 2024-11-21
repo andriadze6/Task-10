@@ -9,22 +9,22 @@ type homepageType = {
   manTrending: Database["public"]["Views"]["man_tranding_product_view"]["Row"][];
   womanTrending: Database["public"]["Views"]["woman_tranding_product_view"]["Row"][];
   kidTrending: Database["public"]["Views"]["kid_tranding_product_view"]["Row"][];
-  newArrival: Database["public"]["Views"]["newarrival_product_view"]["Row"][];
+
 };
 
 export default function Slider({
   manTrending,
   womanTrending,
   kidTrending,
-  newArrival,
+  
 }: homepageType) {
-  debugger;
+  // debugger;
   const [category, setCategory] = useState({
     category: "man",
     data: manTrending,
   });
   function changeCategory(value: string) {
-    debugger;
+    // debugger;
     if (value === "man") {
       setCategory({
         category: "man",
