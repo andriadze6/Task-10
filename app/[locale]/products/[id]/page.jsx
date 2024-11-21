@@ -1,4 +1,5 @@
 import { supabase } from "../../lib/supabaseClient";
+import ProductPage from "./productpage";
 
 async function getData(id) {
   try {
@@ -18,19 +19,10 @@ async function getData(id) {
   }
 }
 
-export default async function ProductPage({ params }) {
+export default async function page({ params }) {
   const { id } = params;
 
   const [product] = await getData(id);
-  console.log(product);
 
-  return (
-    <div>
-      <h1>{product?.id}</h1>
-      <h1>{product?.title}</h1>
-      <h1>{product?.description}</h1>
-
-      <h2>blaaa</h2>
-    </div>
-  );
+  return <ProductPage product={product} />;
 }
