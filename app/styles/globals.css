@@ -2,24 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
-  
-}
 body {
   transition: background 1s linear, color 0.4s ease;
 }
 body.light {
   --background: white;
   --foreground: #0a4b61;
-  --TWrapperBackGround:#f2f1f0;
-  --BoxTrendingShadow:'';
+  --TWrapperBackGround: #f2f1f0;
+  --BoxTrendingShadow: "";
 }
 
 body.dark {
-  --background: radial-gradient(circle, rgba(17,17,18,0.992) 0%, rgb(53, 53, 83) 0%, rgb(20, 88, 103) 100%);
+  --background: radial-gradient(
+    circle,
+    rgba(17, 17, 18, 0.992) 0%,
+    rgb(53, 53, 83) 0%,
+    rgb(20, 88, 103) 100%
+  );
   --foreground: #ededed;
-  --TWrapperBackGround:radial-gradient(circle, rgba(5, 5, 55, 0.992) 0%, rgba(18, 18, 28, 0.451) 0%, rgb(35, 168, 198) 100%);
-  --BoxTrendingShadow:rgba(155, 177, 207, 0.685) 0px 25px 20px -20px;
+  --TWrapperBackGround: radial-gradient(
+    circle,
+    rgba(5, 5, 55, 0.992) 0%,
+    rgba(18, 18, 28, 0.451) 0%,
+    rgb(35, 168, 198) 100%
+  );
+  --BoxTrendingShadow: rgba(155, 177, 207, 0.685) 0px 25px 20px -20px;
 }
 body {
   color: var(--foreground);
@@ -29,17 +36,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: radial-gradient(circle, rgba(17,17,18,0.992) 0%, rgba(23,23,38,1) 35%, rgba(37,88,99,1) 100%);
+    --background: radial-gradient(
+      circle,
+      rgba(17, 17, 18, 0.992) 0%,
+      rgba(23, 23, 38, 1) 35%,
+      rgba(37, 88, 99, 1) 100%
+    );
     --foreground: #ededed;
   }
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --background:radial-gradient(circle, rgba(243, 230, 132, 0.7819502801120448) 29%, rgba(22, 176, 212, 0.9360119047619048) 85%);;
+    --background: radial-gradient(
+      circle,
+      rgba(243, 230, 132, 0.7819502801120448) 29%,
+      rgba(22, 176, 212, 0.9360119047619048) 85%
+    );
     --foreground: #ededed;
   }
 }
@@ -49,8 +64,6 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
-
-
 
 * {
   box-sizing: border-box;
