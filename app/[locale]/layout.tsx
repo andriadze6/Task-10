@@ -1,12 +1,11 @@
-import {NextIntlClientProvider} from 'next-intl';
-import {getTranslations} from 'next-intl/server';
-import {getMessages} from 'next-intl/server';
-import {notFound} from 'next/navigation';
-import {routing} from '../../i18n/routing';
+import { NextIntlClientProvider } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing } from "../../i18n/routing";
 import "../globals.css";
-import { UserProvider } from '@auth0/nextjs-auth0/client';
-import React from 'react';
- 
+import { UserProvider } from "@auth0/nextjs-auth0/client";
+import React from "react";
 
 export const metadata = {
   title: "Shopping site",
@@ -20,26 +19,29 @@ interface LocaleLayoutProps {
   };
 }
 
-export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
-  const { locale } = params; 
+export default async function LocaleLayout({
+  children,
+  params,
+}: LocaleLayoutProps) {
+  const { locale } = params;
   // Ensure that the incoming `locale` is valid
   if (!routing.locales.includes(locale as "en" | "ka")) {
     notFound();
   }
- 
+
   // Providing all messages to the client
   // side is the easiest way to get started
   const messages = await getMessages();
-  const t = await getTranslations('ProfilePage');
+  const t = await getTranslations("ProfilePage");
   return (
-    <html lang={locale }>
+    <html lang={locale} suppressHydrationWarning>
       <UserProvider>
-      <body>
-        <NextIntlClientProvider messages={messages}>
+        <body>
+          <NextIntlClientProvider messages={messages}>
             {children}
-        </NextIntlClientProvider>
-      </body>
-    </UserProvider>
+          </NextIntlClientProvider>
+        </body>
+      </UserProvider>
     </html>
   );
 }
