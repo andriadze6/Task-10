@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "../../i18n/routing";
-import "../globals.css";
+import "../styles/globals.css";
 import React from "react";
 
 export const metadata = {

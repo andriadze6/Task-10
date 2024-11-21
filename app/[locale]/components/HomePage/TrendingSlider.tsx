@@ -17,13 +17,13 @@ export default function Slider({
   kidTrending,
   newArrival,
 }: homepageType) {
-  debugger;
+  // debugger;
   const [category, setCategory] = useState({
     category: "man",
     data: manTrending,
   });
   function changeCategory(value: string) {
-    debugger;
+    // debugger;
     if (value === "man") {
       setCategory({
         category: "man",

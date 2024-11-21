@@ -3,7 +3,7 @@ import NewHeader from "./components/Header/NewHeader";
 import NewHomePage from "./components/HomePage/NewHomePage";
 import { supabase } from "./lib/supabaseClient";
 import { HomePageDataContext } from "./providers/HomePageDataProvider";
-import "@/app/globals.css";
+import "@/app/styles/globals.css";
 
 async function getData() {
   try {
@@ -24,7 +24,7 @@ async function getData() {
 }
 export default async function HomePage() {
   const homePageData = await getData();
-  debugger;
+  // debugger;
   return (
     <>
       <NewHeader></NewHeader>
