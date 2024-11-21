@@ -21,16 +21,14 @@ import MainBanner from '../../assets/img/homePageImg/NewArrival/MainBanner.png'
 import Slider from "./Slider";
 
 import { type } from "os";
+//obieqtis tipi
 interface NewArrivalItem {
-    id: number;
+    product_ID: number;
     title: string;
     price: number;
     color: string[];
     img: { [key: string]: string[] };
-  
   }
-  
-  
  type homepageType = {
     manTrending:Database["public"]["Views"]["man_tranding_product_view"]["Row"][],
     womanTrending:Database["public"]["Views"]["woman_tranding_product_view"]["Row"][],
