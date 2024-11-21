@@ -12,8 +12,6 @@ import logo from "../../assets/img/Logo.png";
 import cartIcon from "../../assets/img/icon-cart.png";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
-import Search from "../SearchInput";
-import UserDropDownList from "../UserdropDownManue";
 import useTheme from "@/app/[locale]/hooks/changeTheme";
 import { MdOutlineDarkMode } from "react-icons/md";
 
@@ -69,7 +67,6 @@ function Header() {
                   </svg>
                 )}
               </div>
-              <UserDropDownList></UserDropDownList>
             </div>
           </div>
         </div>
@@ -118,7 +115,6 @@ function Header() {
               </div>
             </nav>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <Search></Search>
               <div className="favorite-Item-Div">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
