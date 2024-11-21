@@ -2,7 +2,7 @@ import { supabase } from "../lib/supabaseClient";
 import "./index.css";
 import Header from "../components/Header/NewHeader";
 import Image from "next/image";
-import "../assets/css/NewHomePage.css"
+import "../assets/css/NewHomePage.css";
 
 interface Product {
   id: number;
@@ -56,7 +56,7 @@ export default async function WomanCategory(): Promise<JSX.Element> {
                           />
                           <Image
                             key={`image-2-${item.id}-${index}`}
-                            style={{display:"none"}}
+                            style={{ display: "none" }}
                             alt=""
                             height={500}
                             width={500}

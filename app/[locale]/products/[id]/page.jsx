@@ -11,7 +11,7 @@ async function getData(id) {
       console.error("Error fetching data:", error);
       return null;
     }
-    console.log(data);
+
     return data;
   } catch (err) {
     console.error("Unexpected error:", err);

@@ -40,11 +40,11 @@ export default function KidsTrendingItem({ product }: KidsTrendingItemProps) {
 
   return (
     <div
-      key={passedItem.id}
+      // key={passedItem.id}
       className="w-auto h-lvh bg-white m-10 flex flex-row"
     >
       <div className="flex flex-col gap-1">
-        <div key={chosenColor}>
+        {/* <div key={chosenColor}>
           {img[chosenColor].map((item, key) => {
             return (
               <Image
@@ -58,13 +58,15 @@ export default function KidsTrendingItem({ product }: KidsTrendingItemProps) {
               />
             );
           })}
-        </div>
+        </div> */}
       </div>
       <div className="w-150 h-150 border border-gray bg-gray-50 rounded-2xl flex flex-col items-center justify-center mt-5 ">
-        <img
+        <Image
           className="rounded-2xl h-150 w-150 object-contain p-5"
           src={img[chosenColor][chosenPhoto]}
           alt={img[chosenColor][chosenPhoto]}
+          width={350}
+          height={350}
         />
       </div>
       <div className="flex-col flex justify-start gap-10 text-black w-150">
@@ -73,7 +75,11 @@ export default function KidsTrendingItem({ product }: KidsTrendingItemProps) {
         <div className="flex flex-row m-5">
           Tags:
           {passedItem.tags.map((item) => {
-            return <div className="border border-gray">#{item}</div>;
+            return (
+              <div className="border border-gray" key={item}>
+                #{item}
+              </div>
+            );
           })}
         </div>
 
@@ -99,7 +105,7 @@ export default function KidsTrendingItem({ product }: KidsTrendingItemProps) {
           Available Sizes:
           {availableSizes.map((item) => {
             return (
-              <div className="flex flex-row m-2">
+              <div className="flex flex-row m-2" key={item}>
                 {item}:{stock[chosenColor][item]}
               </div>
             );
