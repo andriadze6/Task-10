@@ -24,7 +24,7 @@ async function getData() {
 }
 export default async function HomePage() {
   const homePageData = await getData();
-  debugger
+debugger
   return (
     <>
       <NewHeader></NewHeader>

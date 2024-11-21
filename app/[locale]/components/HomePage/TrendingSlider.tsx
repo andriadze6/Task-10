@@ -48,7 +48,7 @@ export default function Slider({ manTrending,womanTrending,kidTrending, newArriv
                 <h3>trend collection</h3>
                 <div style={{textAlign:"center", justifyContent:"flex-start", fontSize:"15px", display:"grid", gridTemplateColumns:"1fr 1fr 1fr"}}>
                     <button onClick={()=>{changeCategory("man")}}   className={`${category.category === "man" ? "Active" : ""} lineButton`}>Man</button>
-                    <button onClick={()=>{changeCategory("woman")}} className={`${category.category === "woman" ? "Active" : ""} lineButton`}>Woman</button>
+                    <button onClick={()=>{changeCategory("woman")}} className={`${category.category === "woman" ? "Active" : ""} `}>Woman</button>
                     <button onClick={()=>{changeCategory("kid")}}   className={`${category.category === "kid" ? "Active" : ""} lineButton`}>Kid</button>
                 </div>
                 <div style={{display:"flex",alignItems:"center", gap:"20px"}}>

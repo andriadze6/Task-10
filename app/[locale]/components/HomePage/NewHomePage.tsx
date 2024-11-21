@@ -23,12 +23,11 @@ import Slider from "./Slider";
 import { type } from "os";
 
  type homepageType = {
-    manTrending:Database["public"]["Views"]["man_tranding_product_view"]["Relationships"][],
-    womanTrending:Database["public"]["Views"]["woman_tranding_product_view"]["Relationships"][],
-    kidTrending:Database["public"]["Views"]["kid_tranding_product_view"]["Relationships"][],
-    newArrival:Database["public"]["Views"]["newarrival_product_view"]["Relationships"][],
+    manTrending:Database["public"]["Views"]["man_tranding_product_view"]["Row"][],
+    womanTrending:Database["public"]["Views"]["woman_tranding_product_view"]["Row"][],
+    kidTrending:Database["public"]["Views"]["kid_tranding_product_view"]["Row"][],
+    newArrival:Database["public"]["Views"]["newarrival_product_view"]["Row"][],
  }
-
 function HomePage({ manTrending,womanTrending,kidTrending,newArrival}:homepageType){
     debugger
     return(
