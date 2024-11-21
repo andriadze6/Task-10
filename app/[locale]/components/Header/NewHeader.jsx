@@ -87,7 +87,7 @@ function Header() {
                 </Link>
               </div>
               <div className="navName-div">
-                <Link href="" className="navName">
+                <Link href="/ManCategory" className="navName">
                   {t("Man")}
                   <i className="fa fa-angle-down"></i>
                 </Link>
