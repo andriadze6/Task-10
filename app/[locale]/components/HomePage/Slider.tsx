@@ -4,7 +4,7 @@ import useSlider from "@/app/[locale]/hooks/changeSlider";
 import NewCard from "../NewCard";
 
 interface NewArrivalItem {
-  id: number;
+  product_ID: number;
   title: string;
   price: number;
   color: string[];
@@ -17,8 +17,6 @@ interface SliderProps {
 }
 
 export default function Slider({ newArrival }: SliderProps) {
-  console.log("NewArrival Props:", newArrival);
-
   ///SliderHook
   let { sliderState, changeSlider } = useSlider(3);
   return (
@@ -30,10 +28,10 @@ export default function Slider({ newArrival }: SliderProps) {
                 <button className='lineButton'>View all products</button>
                 <div style={{display:"flex", gap:"10px"}}>
                     <button onClick={()=>{changeSlider(0)}} className="slider-Button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6"><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"></path></svg>
                         </button>
                     <button onClick={()=>{changeSlider(1)}} className="slider-Button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6"><path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path></svg>
                     </button>
                 </div>
             </div>
@@ -46,7 +44,7 @@ export default function Slider({ newArrival }: SliderProps) {
             {newArrival.map((item) => {
               return (
                 <div
-                  key={item.id}
+                  key={item.product_ID}
                   className="SliderItem"
                   style={{flex: `0 0 calc(100% / ${3})`}}
                 >
@@ -60,8 +58,6 @@ export default function Slider({ newArrival }: SliderProps) {
     </div>
   );
 }
-
-// let NewArrival =[
 //     {
 //         id:1,
 //         images:[NewArrival11, NewArrival12],

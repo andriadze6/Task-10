@@ -4,7 +4,7 @@ import "../assets/css/NewHomePage.css";
 
 interface NewCardProps {
   product: {
-    id: number;
+    product_ID: number;
     title: string;
     price: number;
     color: string[];
@@ -13,14 +13,8 @@ interface NewCardProps {
 }
 
 export default function Card({ product }: NewCardProps) {
-  const selectedColor = product.color[0]; 
+  const selectedColor = product.color[0];
   const images = product.img[selectedColor];
-
-
-  console.log("Product:", product);
-  console.log("Selected Color:", selectedColor);
-  console.log("Images for Color:", images);
-  console.log("NewCardProps:", product);
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <div className="cardImgDiv" style={{ position: "relative" }}>
@@ -38,8 +32,7 @@ export default function Card({ product }: NewCardProps) {
             height={500}
             width={500}
             src={images[0]}
-          />
-    
+          />  
         </div>
         <div className="popUpContent">
           <button className="cardButton">

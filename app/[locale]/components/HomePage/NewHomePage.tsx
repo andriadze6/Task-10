@@ -37,7 +37,6 @@ interface NewArrivalItem {
     kidTrending:Database["public"]["Views"]["kid_tranding_product_view"]["Row"][],
     newArrival: NewArrivalItem[]; }
 function HomePage({ manTrending,womanTrending,kidTrending,newArrival}:homepageType){
-    debugger
     return(
         <>
             <div className="mainBillboard">
