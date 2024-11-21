@@ -4,7 +4,6 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "../../i18n/routing";
 import "../globals.css";
-import { UserProvider } from "@auth0/nextjs-auth0/client";
 import React from "react";
 
 export const metadata = {
@@ -32,16 +31,14 @@ export default async function LocaleLayout({
   // Providing all messages to the client
   // side is the easiest way to get started
   const messages = await getMessages();
-  const t = await getTranslations("ProfilePage");
+  // const t = await getTranslations("ProfilePage");
   return (
     <html lang={locale} suppressHydrationWarning>
-      <UserProvider>
-        <body>
-          <NextIntlClientProvider messages={messages}>
-            {children}
-          </NextIntlClientProvider>
-        </body>
-      </UserProvider>
+      <body>
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
+      </body>
     </html>
   );
 }
