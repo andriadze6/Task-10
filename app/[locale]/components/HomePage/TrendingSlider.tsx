@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import useSlider from "@/app/[locale]/hooks/changeSlider";
 import { Database } from "../../lib/dataTypes ";
+import { Link } from "@/i18n/routing";
 
 type homepageType = {
   manTrending: Database["public"]["Views"]["man_tranding_product_view"]["Row"][];
@@ -124,14 +125,16 @@ export default function Slider({
                                 width={500}
                                 src={imgArray[0]}
                               />
-                              <Image
-                                key={`image-2-${item.product_ID}-${index}`}
-                                className="T-Img2"
-                                alt=""
-                                height={500}
-                                width={500}
-                                src={imgArray[2]}
-                              />
+                              <Link href={`/products/${item.product_ID}`}>
+                                <Image
+                                  key={`image-2-${item.product_ID}-${index}`}
+                                  className="T-Img2"
+                                  alt=""
+                                  height={500}
+                                  width={500}
+                                  src={imgArray[2]}
+                                />
+                              </Link>
                             </div>
                           );
                         }
