@@ -7,7 +7,7 @@ export async function GET() {
     let { data, error } = await supabase
       .from("products")
       .select("*")
-      .eq("gender", "neutral");
+      .in("gender", ["neutral", "boy"]);
 
     const fetchedProducts: Product[] = data as Product[];
 

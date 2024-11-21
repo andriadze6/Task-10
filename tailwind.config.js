@@ -8,7 +8,18 @@ module.exports = {
     "./app/.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+        bear: "#000000",
+        blue: "#0000FF",
+      },
+      height: {
+        150: "600px",
+      },
+      width: {
+        150: "600px",
+      },
+    },
   },
   plugins: [],
 };
