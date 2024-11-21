@@ -2,23 +2,14 @@
 import Image from "next/image";
 import "../assets/css/NewHomePage.css"
 
-interface product{
-    id: number;
-    title: string;
-    price: number;
-    description: string;
-    category: string;
-    images: string[];
-}
 
-export default function Card({product}:{product:product}){
-    debugger
+export default function Card({props}){
     return(
         <div style={{display:"flex", flexDirection:"column"}}>
             <div className='cardImgDiv' style={{position:"relative"}}>
                 <div>
-                    <Image className="S-Img" alt="" height={500} width={500} src={product.images[0]}/>
-                    <Image className="S-Img2" alt="" height={500} width={500} src={product.images[1]}/>
+                    <Image className="S-Img" alt="" height={500} width={500} src={props.images[0]}/>
+                    <Image className="S-Img2" alt="" height={500} width={500} src={props.images[1]}/>
                 </div>
                 <div className="popUpContent">
                     <button className="cardButton">
@@ -34,10 +25,10 @@ export default function Card({product}:{product:product}){
                 </div>
             </div>
             <div style={{textAlign:"center"}}>
-                <h3>{product.title}</h3>
+                <h3>{props.title}</h3>
                 <div style={{display:"flex", gap:"20px", justifyContent:"center", alignItems:"center"}}>
                     <div>
-                        <span>{product.price}</span>
+                        <span>{props.price}</span>
                     </div>
                     <div style={{ display: "flex", gap:"20px", alignItems: "center", color: "#c1121f"}}>
                         {/* <span className="strike-center">$<span>350</span></span> */}
