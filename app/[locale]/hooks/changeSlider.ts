@@ -9,7 +9,6 @@ const useSlider = (sliderToShow: number, sliderAmount = 4) => {
   const clickAmount = sliderAmount - sliderToShow;
 
   const changeSlider = (con: number) => {
-    // debugger
     const width = 100 / sliderToShow;
     if (con === 1) {
       if (sliderState.clickAmount < clickAmount) {

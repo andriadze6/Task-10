@@ -14,7 +14,6 @@ import "../assets/css/NewHomePage.css";
 let imgArray = [img1, img2, img3, img4, img5];
 export default function NewDetailedPage() {
   let { sliderState, changeSlider } = useSlider(1, 5);
-  // debugger;
   return (
     <>
       <Header></Header>

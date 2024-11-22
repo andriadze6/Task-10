@@ -1,6 +1,7 @@
 import { supabase } from "../../lib/supabaseClient";
 import ProductPage from "./ProductPage";
 import { Product } from "../../../types";
+import NewHeader from "../../components/Header/NewHeader";
 
 async function getData(id: string) {
   try {
@@ -25,5 +26,10 @@ export default async function page({ params }: { params: { id: string } }) {
 
   const [product]: Product[] = await getData(id);
 
-  return <ProductPage product={product} />;
+  return (
+    <>
+      <NewHeader />
+      <ProductPage product={product} />
+    </>
+  );
 }
