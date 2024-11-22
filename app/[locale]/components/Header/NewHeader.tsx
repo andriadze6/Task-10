@@ -108,11 +108,6 @@ function Header() {
                   {t("Contact")}
                 </Link>
               </div>
-              <div className="navName-div">
-                <Link href="/BlogPage" className="navName">
-                  {t("Blog")}
-                </Link>
-              </div>
             </nav>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <div className="favorite-Item-Div">
