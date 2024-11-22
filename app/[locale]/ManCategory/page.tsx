@@ -3,6 +3,8 @@ import NewCard from "../components/NewCard";
 import NewHeader from "../components/Header/NewHeader";
 import Image from "next/image";
 import "../assets/css/NewHomePage.css";
+import { Link } from "@/i18n/routing";
+
 async function GetManCategory() {
   try {
     let { data: products, error } = await supabase
@@ -55,15 +57,17 @@ export default async function ManCategoryPage() {
                                       src={imgArray[0]}
                                       priority
                                     />
-                                    <Image
-                                      key={`image-2-${item.product_ID}-${index}`}
-                                      className="T-Img2"
-                                      alt=""
-                                      height={500}
-                                      width={500}
-                                      src={imgArray[2]}
-                                      priority
-                                    />
+                                    <Link href={`/products/${item.id}`}>
+                                      <Image
+                                        key={`image-2-${item.product_ID}-${index}`}
+                                        className="T-Img2"
+                                        alt=""
+                                        height={500}
+                                        width={500}
+                                        src={imgArray[2]}
+                                        priority
+                                      />
+                                    </Link>
                                   </div>
                                 );
                               }

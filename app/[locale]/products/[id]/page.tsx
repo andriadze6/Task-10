@@ -1,7 +1,8 @@
 import { supabase } from "../../lib/supabaseClient";
-import ProductPage from "./productpage";
+import ProductPage from "./ProductPage";
+import { Product } from "../../../types";
 
-async function getData(id) {
+async function getData(id: string) {
   try {
     let { data, error } = await supabase.rpc("getproductbyid", {
       input_id: id,
@@ -19,10 +20,10 @@ async function getData(id) {
   }
 }
 
-export default async function page({ params }) {
+export default async function page({ params }: { params: { id: string } }) {
   const { id } = params;
 
-  const [product] = await getData(id);
+  const [product]: Product[] = await getData(id);
 
   return <ProductPage product={product} />;
 }
