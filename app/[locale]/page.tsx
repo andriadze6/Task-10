@@ -15,7 +15,7 @@ async function getData() {
       console.error("Error fetching data:", error);
       return null;
     }
-    console.log(get_home_page_data);
+    // console.log(get_home_page_data);
     return get_home_page_data;
   } catch (err) {
     console.error("Unexpected error:", err);

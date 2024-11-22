@@ -2,16 +2,9 @@ import { supabase } from "../lib/supabaseClient";
 import "./index.css";
 import Header from "../components/Header/NewHeader";
 import Image from "next/image";
-import "../assets/css/NewHomePage.css"
-
-interface Product {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  img: string[];
-  gender: string;
-}
+import "../assets/css/NewHomePage.css";
+import { Product } from "@/app/types";
+import { Link } from "@/i18n/routing";
 
 async function getProducts(): Promise<Product[]> {
   const {
@@ -46,17 +39,19 @@ export default async function WomanCategory(): Promise<JSX.Element> {
                     if (index === 0 && Array.isArray(imgArray)) {
                       return (
                         <div key={`image-group-${item.id}-${index}`}>
-                          <Image
-                            key={`image-1-${item.id}-${index}`}
-                            className="T-Img"
-                            alt=""
-                            height={500}
-                            width={500}
-                            src={imgArray[0]}
-                          />
+                          <Link href={`/products/${item.id}`}>
+                            <Image
+                              key={`image-1-${item.id}-${index}`}
+                              className="T-Img"
+                              alt=""
+                              height={500}
+                              width={500}
+                              src={imgArray[0]}
+                            />
+                          </Link>
                           <Image
                             key={`image-2-${item.id}-${index}`}
-                            style={{display:"none"}}
+                            style={{ display: "none" }}
                             alt=""
                             height={500}
                             width={500}

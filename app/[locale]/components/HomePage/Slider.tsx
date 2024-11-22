@@ -1,40 +1,69 @@
 "use client";
 import useSlider from "@/app/[locale]/hooks/changeSlider";
-
 import NewCard from "../NewCard";
+import { Product } from "@/app/types";
 
-interface NewArrivalItem {
-  product_ID: number;
-  title: string;
-  price: number;
-  color: string[];
-  img: { [key: string]: string[] };
-
-}
-
-interface SliderProps {
-  newArrival: NewArrivalItem[];
-}
-
-export default function Slider({ newArrival }: SliderProps) {
+export default function Slider({ newArrival }: { newArrival: Product[] }) {
   ///SliderHook
   let { sliderState, changeSlider } = useSlider(3);
   return (
-    <div style={{display:"flex", alignItems:"center"}}>
-    <div className="sliderWrapper">
-        <div style={{display:"flex", justifyContent:"space-between", padding:"10px"}}>
-            <h3>New arrivals</h3>
-            <div style={{display:"flex", gap:"20px"}}>
-                <button className='lineButton'>View all products</button>
-                <div style={{display:"flex", gap:"10px"}}>
-                    <button onClick={()=>{changeSlider(0)}} className="slider-Button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6"><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"></path></svg>
-                        </button>
-                    <button onClick={()=>{changeSlider(1)}} className="slider-Button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6"><path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path></svg>
-                    </button>
-                </div>
+    <div style={{ display: "flex", alignItems: "center" }}>
+      <div className="sliderWrapper">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            padding: "10px",
+          }}
+        >
+          <h3>New arrivals</h3>
+          <div style={{ display: "flex", gap: "20px" }}>
+            <button className="lineButton">View all products</button>
+            <div style={{ display: "flex", gap: "10px" }}>
+              <button
+                onClick={() => {
+                  changeSlider(0);
+                }}
+                className="slider-Button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="size-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
+                  ></path>
+                </svg>
+              </button>
+              <button
+                onClick={() => {
+                  changeSlider(1);
+                }}
+                className="slider-Button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="size-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                  ></path>
+                </svg>
+              </button>
             </div>
+          </div>
         </div>
         <div
           className="sliderContainer"
@@ -44,9 +73,9 @@ export default function Slider({ newArrival }: SliderProps) {
             {newArrival.map((item) => {
               return (
                 <div
-                  key={item.product_ID}
+                  key={item.id}
                   className="SliderItem"
-                  style={{flex: `0 0 calc(100% / ${3})`}}
+                  style={{ flex: `0 0 calc(100% / ${3})` }}
                 >
                   <NewCard product={item} />
                 </div>

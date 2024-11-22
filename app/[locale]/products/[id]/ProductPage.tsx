@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { Product } from "../../../types";
 
-export default function ProductPage({ product }) {
+export default function ProductPage({ product }: { product: Product }) {
   const [selectedColor, setSelectedColor] = useState(product.color[0]);
   const [selectedImage, setSelectedImage] = useState(0);
 
@@ -59,7 +60,7 @@ export default function ProductPage({ product }) {
             Category: {product.category}
           </p>
 
-          <p className="text-lg text-gray-700 mb-2 text-black dark:text-white">
+          <p className="text-lg  mb-2 text-black dark:text-white">
             Price: <span className="font-bold">${product.price}</span>{" "}
             <span className="line-through  text-black dark:text-white">
               ${product.price}

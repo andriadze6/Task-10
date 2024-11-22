@@ -1,43 +1,28 @@
-"use client"
+"use client";
 
 import Image from "next/image";
-import { useContext } from "react";
-import "../../assets/css/NewHomePage.css"
-import { Database } from "../../lib/dataTypes ";
-
-
-
-import BillboardImg1 from "../../assets/img/homePageImg/NewHomePage/Header-Img1.png"
-import BillboardImg2 from "../../assets/img/homePageImg/NewHomePage/Header-Img2.png"
-import BillboardImg3 from "../../assets/img/homePageImg/NewHomePage/Header-Img3.png"
-import BillboardImg4 from "../../assets/img/homePageImg/NewHomePage/Header-Img4.png"
-import BillboardImg5 from "../../assets/img/homePageImg/NewHomePage/Header-Img5.png"
-import KidsTrending from "../../assets/img/homePageImg/Trending/Kids.png"
+import "../../assets/css/NewHomePage.css";
 import TrendingSlider from "./TrendingSlider";
-import WomanTrending from "../../assets/img/homePageImg/Trending/WomanTrend.png"
-import SwimWear from '../../assets/img/homePageImg/NewHomePage/SwimWear.png'
 import Link from "next/link";
-import MainBanner from '../../assets/img/homePageImg/NewArrival/MainBanner.png'
+import MainBanner from "../../assets/img/homePageImg/NewArrival/MainBanner.png";
 import Slider from "./Slider";
+import { Product } from "../../../types";
 
-import { type } from "os";
-//obieqtis tipi
-interface NewArrivalItem {
-    product_ID: number;
-    title: string;
-    price: number;
-    color: string[];
-    img: { [key: string]: string[] };
-  }
- type homepageType = {
-    manTrending:Database["public"]["Views"]["man_tranding_product_view"]["Row"][],
-    womanTrending:Database["public"]["Views"]["woman_tranding_product_view"]["Row"][],
-    kidTrending:Database["public"]["Views"]["kid_tranding_product_view"]["Row"][],
-    newArrival: NewArrivalItem[]; }
-function HomePage({ manTrending,womanTrending,kidTrending,newArrival}:homepageType){
-    return(
-        <>
-            {/* <div className="mainBillboard">
+type homepageType = {
+  manTrending: Product[];
+  womanTrending: Product[];
+  kidTrending: Product[];
+  newArrival: Product[];
+};
+function HomePage({
+  manTrending,
+  womanTrending,
+  kidTrending,
+  newArrival,
+}: homepageType) {
+  return (
+    <>
+      {/* <div className="mainBillboard">
                 <div className="mainBillboard-1Column">
                     <div className="mainBillboard-ImgDiv">
                         <div>
@@ -97,19 +82,23 @@ function HomePage({ manTrending,womanTrending,kidTrending,newArrival}:homepageTy
                     </div>
                 </div>
             </div> */}
-            <TrendingSlider manTrending={manTrending} womanTrending={womanTrending} kidTrending={kidTrending}></TrendingSlider>
-            <div className="BannerWrapper">
-                <div className="BannerContainer">
-                    <Link className="mainBanner" href='/'>
-                        <div className="mainBanner-ImgDiv">
-                            <Image height={500} width={500} alt="" src={MainBanner}/>
-                        </div>
-                        <button className="exploreButton">Explore</button>
-                    </Link>
-                <Slider newArrival={newArrival}></Slider>
-                </div>
+      <TrendingSlider
+        manTrending={manTrending}
+        womanTrending={womanTrending}
+        kidTrending={kidTrending}
+      ></TrendingSlider>
+      <div className="BannerWrapper">
+        <div className="BannerContainer">
+          <Link className="mainBanner" href="/">
+            <div className="mainBanner-ImgDiv">
+              <Image height={500} width={500} alt="" src={MainBanner} />
             </div>
-        </>
-    )
+            <button className="exploreButton">Explore</button>
+          </Link>
+          <Slider newArrival={newArrival}></Slider>
+        </div>
+      </div>
+    </>
+  );
 }
 export default HomePage;

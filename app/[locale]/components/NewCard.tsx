@@ -1,24 +1,16 @@
 "use client";
 import Image from "next/image";
 import "../assets/css/NewHomePage.css";
+import { Product } from "@/app/types";
+import { Link } from "@/i18n/routing";
 
-interface NewCardProps {
-  product: {
-    product_ID: number;
-    title: string;
-    price: number;
-    color: string[];
-    img: { [key: string]: string[] };
-  };
-}
-
-export default function Card({ product }: NewCardProps) {
+export default function Card({ product }: { product: Product }) {
   const selectedColor = product.color[0];
   const images = product.img[selectedColor];
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <div className="cardImgDiv" style={{ position: "relative" }}>
-        <div>
+        <Link href={`/products/${product.id}`}>
           <Image
             className="S-Img"
             alt={product.title}
@@ -26,14 +18,7 @@ export default function Card({ product }: NewCardProps) {
             width={500}
             src={images[1]}
           />
-          <Image
-            className="S-Img2"
-            alt=""
-            height={500}
-            width={500}
-            src={images[0]}
-          />  
-        </div>
+        </Link>
         <div className="popUpContent">
           <button className="cardButton">
             <svg
